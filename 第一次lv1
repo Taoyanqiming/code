@@ -1,0 +1,22 @@
+package main//这个代码根本运行不了
+
+import "fmt"
+
+func Palindrome() {
+	var input string
+	fmt.Scan(&input) //输入
+
+	var (
+		inputRune = []rune(input) //rune处理中文
+		output    string          //输出字符串
+	) //我不理解
+	for i, k := 0, len(inputRune)-1; i < len(inputRune)/2; i++ {
+		if inputRune[i] != inputRune[k] {
+			fmt.Println("it is not palindrome")
+			return
+		}
+		output += string(inputRune[i])
+		k--
+	}
+	fmt.Println(output)
+}
